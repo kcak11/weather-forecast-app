@@ -22727,20 +22727,35 @@
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'form',
-	        { onSubmit: this.onFormSubmit, className: 'input-group' },
-	        _react2.default.createElement('input', {
-	          placeholder: 'Get a five-day forecast in your favorite cities',
-	          className: 'form-control',
-	          value: this.state.term,
-	          onChange: this.onInputChange }),
+	        'div',
+	        null,
 	        _react2.default.createElement(
-	          'span',
-	          { className: 'input-group-btn' },
+	          'div',
+	          { className: 'text-center', style: { "padding": "10px" } },
+	          'Weather Forcast Application ( powered by ',
 	          _react2.default.createElement(
-	            'button',
-	            { type: 'submit', className: 'btn btn-secondary' },
-	            'Submit'
+	            'a',
+	            { href: 'http://www.ashishkumarkc.com', target: '_blank' },
+	            'Ashish\'s Web'
+	          ),
+	          ' )'
+	        ),
+	        _react2.default.createElement(
+	          'form',
+	          { onSubmit: this.onFormSubmit, className: 'input-group' },
+	          _react2.default.createElement('input', {
+	            placeholder: 'Get a five-day forecast in your favorite cities',
+	            className: 'form-control',
+	            value: this.state.term,
+	            onChange: this.onInputChange }),
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'input-group-btn' },
+	            _react2.default.createElement(
+	              'button',
+	              { type: 'submit', className: 'btn btn-secondary' },
+	              'Submit'
+	            )
 	          )
 	        )
 	      );
@@ -22775,7 +22790,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var API_KEY = '6a78596d062df78380eff5944c4e5567';
-	var ROOT_URL = 'http://api.openweathermap.org/data/2.5/forecast?appid=' + API_KEY;
+	var ROOT_URL = 'http://api.openweathermap.org/data/2.5/forecast?units=imperial&appid=' + API_KEY;
 
 	var FETCH_WEATHER = exports.FETCH_WEATHER = 'FETCH_WEATHER';
 
@@ -23928,7 +23943,7 @@
 	        _react2.default.createElement(
 	          'td',
 	          null,
-	          _react2.default.createElement(_chart2.default, { data: temps, color: 'orange', units: 'K' })
+	          _react2.default.createElement(_chart2.default, { data: temps, color: 'orange', units: '\xB0F' })
 	        ),
 	        _react2.default.createElement(
 	          'td',
@@ -23962,7 +23977,7 @@
 	            _react2.default.createElement(
 	              'th',
 	              null,
-	              'Temperature (K)'
+	              'Temperature (\xB0F)'
 	            ),
 	            _react2.default.createElement(
 	              'th',
