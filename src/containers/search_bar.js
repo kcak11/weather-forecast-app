@@ -27,16 +27,21 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit} className="input-group">
-        <input
-          placeholder="Get a five-day forecast in your favorite cities"
-          className="form-control"
-          value={this.state.term}
-          onChange={this.onInputChange} />
-        <span className="input-group-btn">
-          <button type="submit" className="btn btn-secondary">Submit</button>
-        </span>
-      </form>
+		<div>
+			<div className="text-center" style={{"padding":"10px"}}>
+				Weather Forcast Application ( powered by <a href="http://www.ashishkumarkc.com" target="_blank">Ashish's Web</a> )
+			</div>
+		  <form onSubmit={this.onFormSubmit} className="input-group">
+			<input
+			  placeholder="Get a five-day forecast in your favorite cities"
+			  className="form-control"
+			  value={this.state.term}
+			  onChange={this.onInputChange} />
+			<span className="input-group-btn">
+			  <button type="submit" className="btn btn-secondary">Submit</button>
+			</span>
+		  </form>
+	  </div>
     );
   }
 }
