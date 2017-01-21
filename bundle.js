@@ -22789,7 +22789,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_KEY = '6a78596d062df78380eff5944c4e5567';
+	var API_KEY = '6bf924969a784be91dcd9199c1f109fd';
 	var ROOT_URL = 'http://api.openweathermap.org/data/2.5/forecast?units=imperial&appid=' + API_KEY;
 
 	var FETCH_WEATHER = exports.FETCH_WEATHER = 'FETCH_WEATHER';
