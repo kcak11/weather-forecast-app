@@ -29,7 +29,7 @@ class SearchBar extends Component {
     return (
 		<div>
 			<div className="text-center" style={{"padding":"10px"}}>
-				Weather Forcast Application ( powered by <a href="http://www.ashishkumarkc.com" target="_blank">Ashish's Web</a> )
+				Weather Forcast Application ( powered by <a href="http://www.ashishkumarkc.com" target="_blank">Ashish&#39;s Web</a> )
 			</div>
 		  <form onSubmit={this.onFormSubmit} className="input-group">
 			<input
