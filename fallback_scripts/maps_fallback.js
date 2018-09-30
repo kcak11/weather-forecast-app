@@ -18,7 +18,7 @@ function handleCityDisplay(e) {
             }
         } else {
             len = trs.length;
-            var cell, attr, arr;
+            var cell, attr, arr, inp;
             [].forEach.call(trs, function(row) {
                 try {
                     cell = row.querySelector("td");
@@ -27,7 +27,7 @@ function handleCityDisplay(e) {
                     inp = arr[arr.length - 2].split("$").join("");
                     cell.innerHTML = "<span style=\"font-size:22px;font-weight:bold;\">" + inp + "</span>";
                 } catch (exjs) {
-                    console.log(exjs);
+                    window.console && console.log(exjs);
                 }
             });
         }
