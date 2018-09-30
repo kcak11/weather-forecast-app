@@ -25,7 +25,7 @@ function handleCityDisplay(e) {
                     attr = cell.getAttribute("data-reactid");
                     arr = attr.split(".");
                     inp = arr[arr.length - 2].split("$").join("");
-                    cell.innerHTML = inp;
+                    cell.innerHTML = "<span style=\"font-size:22px;font-weight:bold;\">" + inp + "</span>";
                 } catch (exjs) {
                     console.log(exjs);
                 }
