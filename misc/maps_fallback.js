@@ -13,7 +13,7 @@ function handleCityDisplay(e) {
         if (trs.length === len) {
             trs = document.querySelectorAll("tbody>tr");
             safeThreshold++;
-            if (safeThreshold < 121) {
+            if (safeThreshold < 242) {
                 setTimeout(_chk, 22);
             }
         } else {
