@@ -8,12 +8,12 @@ function handleCityDisplay(e) {
         return;
     }
     var trs = document.querySelectorAll("tbody>tr");
-    var safety = 0;
+    var safeThreshold = 0;
     var _chk = function() {
         if (trs.length === len) {
             trs = document.querySelectorAll("tbody>tr");
-            safety++;
-            if (safety < 50) {
+            safeThreshold++;
+            if (safeThreshold < 50) {
                 setTimeout(_chk, 22);
             }
         } else {
