@@ -9,7 +9,7 @@
     var theForm = document.querySelector("form");
     var searchField = document.querySelector("input[placeholder]");
     var submitBtn = document.querySelector("button.btn-secondary");
-    var loadMap = function(link) {
+    window.loadMap = function(link) {
         window.open("https://www.google.com/maps/place/" + link.getAttribute("data-city"), "_blank");
     };
     function handleCityDisplay(e) {
