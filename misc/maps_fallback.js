@@ -4,7 +4,7 @@ Pass parameter ?maps_fallback=no in the url to see the maps experience
 */
 var len = document.querySelectorAll("tbody>tr").length;
 var loadMap = function(link){
-    window.open("https://www.google.com/maps/place/" + link.getAttribute("data-city", "_blank");
+    window.open("https://www.google.com/maps/place/" + link.getAttribute("data-city"), "_blank");
 };
 function handleCityDisplay(e) {
     if (e.target.className.indexOf("btn-secondary") === -1) {
