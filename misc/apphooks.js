@@ -40,7 +40,6 @@ function handleCityDisplay(e) {
         }
     };
     _chk();
-  submitBtn.disabled = true;
 }
 /* Control the maps fallback based on query param */
 if (window.location.search.indexOf("maps_fallback=no") === -1) {
