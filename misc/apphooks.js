@@ -58,9 +58,9 @@ if (window.console) {
 }
 /* Validate empty input and disable the submit button */
 submitBtn.disabled = true;
-theForm.addEventListener("submit", function(e){
+/*theForm.addEventListener("submit", function(e){
   setTimeout(function(){submitBtn.disabled = true;},500);
-}, false);
+}, false);*/
 searchField.addEventListener("keyup", function(e){
   if(searchField.value !== "") {
     submitBtn.disabled = false;
