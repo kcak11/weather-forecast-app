@@ -5,6 +5,7 @@
 */
 var len = document.querySelectorAll("tbody>tr").length;
 var _pinChar = decodeURIComponent("%F0%9F%93%8D");
+var theForm = document.querySelector("form");
 var searchField = document.querySelector("input[placeholder]");
 var submitBtn = document.querySelector("button.btn-secondary");
 var loadMap = function(link) {
@@ -44,8 +45,7 @@ function handleCityDisplay(e) {
 }
 /* Control the maps fallback based on query param */
 if (window.location.search.indexOf("maps_fallback=no") === -1) {
-    document.querySelector("body").addEventListener("submit", handleCityDisplay, false);
-    submitBtn.disabled = true;
+    document.querySelector("body").addEventListener("click", handleCityDisplay, false);
 }
 /* CUSTOM console.error to hide quota exceed errors */
 if (window.console) {
@@ -57,6 +57,10 @@ if (window.console) {
     };
 }
 /* Validate empty input and disable the submit button */
+submitBtn.disabled = true;
+theForm.addEventListener("submit", function(e){
+  submitBtn.disabled = true;
+}, false);
 searchField.addEventListener("keyup", function(e){
   if(searchField.value !== "") {
     submitBtn.disabled = false;
