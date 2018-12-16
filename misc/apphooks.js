@@ -3,8 +3,9 @@
   Google Maps fallback script to display city name with map link instead of embedded map during map's unavailability
   Pass parameter ?maps_fallback=no in the url to see the embedded maps experience
 */
-var len = document.querySelectorAll("tbody>tr").length
-  , _pinChar = decodeURIComponent("%F0%9F%93%8D");
+var len = document.querySelectorAll("tbody>tr").length;
+var _pinChar = decodeURIComponent("%F0%9F%93%8D");
+var submitBtn = document.querySelector("button.btn-secondary");
 var loadMap = function(link) {
     window.open("https://www.google.com/maps/place/" + link.getAttribute("data-city"), "_blank");
 };
@@ -38,11 +39,12 @@ function handleCityDisplay(e) {
         }
     };
     _chk();
-  e.target.disabled = true;
+  submitBtn.disabled = true;
 }
 /* Control the maps fallback based on query param */
 if (window.location.search.indexOf("maps_fallback=no") === -1) {
     document.querySelector("body").addEventListener("click", handleCityDisplay, false);
+    submitBtn.disabled = true;
 }
 /* CUSTOM console.error to hide quota exceed errors */
 if (window.console) {
