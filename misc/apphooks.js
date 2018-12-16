@@ -41,7 +41,6 @@ function handleCityDisplay(e) {
         }
     };
     _chk();
-  submitBtn.disabled = true;
 }
 /* Control the maps fallback based on query param */
 if (window.location.search.indexOf("maps_fallback=no") === -1) {
@@ -58,9 +57,9 @@ if (window.console) {
 }
 /* Validate empty input and disable the submit button */
 submitBtn.disabled = true;
-/*theForm.addEventListener("submit", function(e){
-  setTimeout(function(){submitBtn.disabled = true;},500);
-}, false);*/
+theForm.addEventListener("submit", function(e){
+  submitBtn.disabled = true;
+}, false);
 searchField.addEventListener("keyup", function(e){
   if(searchField.value !== "") {
     submitBtn.disabled = false;
