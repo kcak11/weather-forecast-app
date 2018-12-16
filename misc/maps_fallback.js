@@ -37,3 +37,11 @@ function handleCityDisplay(e) {
 if(window.location.search.indexOf("maps_fallback=no") === -1){
   document.querySelector("body").addEventListener("click", handleCityDisplay, false);
 }
+if(window.console){
+    var _cerr = console.error;
+    console.error = function(){
+        if(arguments[0].indexOf("request quota") === -1){
+            _cerr.apply(console, arguments);
+        }
+    }; 
+}
