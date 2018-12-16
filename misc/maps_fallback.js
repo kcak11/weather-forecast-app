@@ -3,6 +3,9 @@ Google Maps fallback script to display city name instead of map during map's una
 Pass parameter ?maps_fallback=no in the url to see the maps experience
 */
 var len = document.querySelectorAll("tbody>tr").length;
+var loadMap = function(link){
+    window.open("https://www.google.com/maps/place/" + link.getAttribute("data-city", "_blank");
+};
 function handleCityDisplay(e) {
     if (e.target.className.indexOf("btn-secondary") === -1) {
         return;
@@ -25,7 +28,7 @@ function handleCityDisplay(e) {
                     attr = cell.getAttribute("data-reactid");
                     arr = attr.split(".");
                     inp = arr[arr.length - 2].split("$").join("");
-                    cell.innerHTML = "<span style=\"font-size:22px;font-weight:bold;\">" + inp + "</span>";
+                    cell.innerHTML = "<a href=\"#\" data-city=\"" + inp + "\" onclick=\"loadMap(this);\" style=\"font-size:22px;font-weight:bold;\">" + inp + "</a>";
                 } catch (exjs) {
                     window.console && console.log(exjs);
                 }
