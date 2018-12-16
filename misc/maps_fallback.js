@@ -1,9 +1,9 @@
 /*
-Google Maps fallback script to display city name instead of map during map's unavailability
-Pass parameter ?maps_fallback=no in the url to see the maps experience
+  Google Maps fallback script to display city name with map link instead of embedded map during map's unavailability
+  Pass parameter ?maps_fallback=no in the url to see the embedded maps experience
 */
 var len = document.querySelectorAll("tbody>tr").length, _pinChar = decodeURIComponent("%F0%9F%93%8D");
-var loadMap = function(link){
+var loadMap = function(link) {
     window.open("https://www.google.com/maps/place/" + link.getAttribute("data-city"), "_blank");
 };
 function handleCityDisplay(e) {
@@ -37,14 +37,14 @@ function handleCityDisplay(e) {
     };
     _chk();
 }
-if(window.location.search.indexOf("maps_fallback=no") === -1){
-  document.querySelector("body").addEventListener("click", handleCityDisplay, false);
+if (window.location.search.indexOf("maps_fallback=no") === -1) {
+    document.querySelector("body").addEventListener("click", handleCityDisplay, false);
 }
-if(window.console){
+if (window.console) {
     var _cerr = console.error;
-    console.error = function(){
-        if(arguments[0].indexOf("request quota") === -1){
+    console.error = function() {
+        if (arguments[0].indexOf("request quota") === -1) {
             _cerr.apply(console, arguments);
         }
-    }; 
+    };
 }
