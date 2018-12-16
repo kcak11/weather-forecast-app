@@ -28,7 +28,7 @@ function handleCityDisplay(e) {
                     attr = cell.getAttribute("data-reactid");
                     arr = attr.split(".");
                     inp = arr[arr.length - 2].split("$").join("");
-                    cell.innerHTML = "<a href=\"#\" data-city=\"" + inp + "\" onclick=\"loadMap(this);\" style=\"font-size:22px;font-weight:bold;\">" + _pinChar + " " + inp + "</a>";
+                    cell.innerHTML = "<a class=\"cityDetailsLink\" href=\"#\" data-city=\"" + inp + "\" onclick=\"loadMap(this);\" style=\"font-size:22px;font-weight:bold;\">" + _pinChar + " " + inp + "</a>";
                 } catch (exjs) {
                     window.console && console.log(exjs);
                 }
