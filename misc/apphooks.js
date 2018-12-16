@@ -5,6 +5,7 @@
 */
 var len = document.querySelectorAll("tbody>tr").length;
 var _pinChar = decodeURIComponent("%F0%9F%93%8D");
+var searchField = document.querySelector("input[placeholder]");
 var submitBtn = document.querySelector("button.btn-secondary");
 var loadMap = function(link) {
     window.open("https://www.google.com/maps/place/" + link.getAttribute("data-city"), "_blank");
@@ -55,3 +56,11 @@ if (window.console) {
         }
     };
 }
+/* Validate empty input and disable the submit button */
+searchField.addEventListener("keyup", function(e){
+  if(searchField.value !== "") {
+    submitBtn.disabled = false;
+  } else {
+    submitBtn.disabled = true;
+  }
+}, false);
