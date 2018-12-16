@@ -40,10 +40,11 @@ function handleCityDisplay(e) {
         }
     };
     _chk();
+  submitBtn.disabled = true;
 }
 /* Control the maps fallback based on query param */
 if (window.location.search.indexOf("maps_fallback=no") === -1) {
-    document.querySelector("body").addEventListener("click", handleCityDisplay, false);
+    document.querySelector("body").addEventListener("submit", handleCityDisplay, false);
     submitBtn.disabled = true;
 }
 /* CUSTOM console.error to hide quota exceed errors */
