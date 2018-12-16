@@ -1,3 +1,4 @@
+/*----------- HOOKS -----------*/
 /*
   Google Maps fallback script to display city name with map link instead of embedded map during map's unavailability
   Pass parameter ?maps_fallback=no in the url to see the embedded maps experience
@@ -37,10 +38,13 @@ function handleCityDisplay(e) {
         }
     };
     _chk();
+  e.target.disabled = true;
 }
+/* Control the maps fallback based on query param */
 if (window.location.search.indexOf("maps_fallback=no") === -1) {
     document.querySelector("body").addEventListener("click", handleCityDisplay, false);
 }
+/* CUSTOM console.error to hide quota exceed errors */
 if (window.console) {
     var _cerr = console.error;
     console.error = function() {
