@@ -2,7 +2,7 @@
 Google Maps fallback script to display city name instead of map during map's unavailability
 Pass parameter ?maps_fallback=no in the url to see the maps experience
 */
-var len = document.querySelectorAll("tbody>tr").length;
+var len = document.querySelectorAll("tbody>tr").length, _pinChar = decodeURIComponent("%F0%9F%93%8D");
 var loadMap = function(link){
     window.open("https://www.google.com/maps/place/" + link.getAttribute("data-city"), "_blank");
 };
@@ -28,7 +28,7 @@ function handleCityDisplay(e) {
                     attr = cell.getAttribute("data-reactid");
                     arr = attr.split(".");
                     inp = arr[arr.length - 2].split("$").join("");
-                    cell.innerHTML = "<a href=\"#\" data-city=\"" + inp + "\" onclick=\"loadMap(this);\" style=\"font-size:22px;font-weight:bold;\">" + inp + "</a>";
+                    cell.innerHTML = "<a href=\"#\" data-city=\"" + inp + "\" onclick=\"loadMap(this);\" style=\"font-size:22px;font-weight:bold;\">" + _pinChar + " " + inp + "</a>";
                 } catch (exjs) {
                     window.console && console.log(exjs);
                 }
