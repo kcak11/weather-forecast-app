@@ -1,5 +1,5 @@
 /*----------- HOOKS -----------*/
-(function() {
+(function () {
     /*
       Google Maps fallback script to display city name with map link instead of embedded map during map's unavailability
       Pass parameter ?maps_fallback=no in the url to see the embedded maps experience
@@ -9,7 +9,7 @@
     var theForm = document.querySelector("form");
     var searchField = document.querySelector("input[placeholder]");
     var submitBtn = document.querySelector("button.btn-secondary");
-    window.loadMap = function(link) {
+    window.loadMap = function (link) {
         window.open("https://www.google.com/maps/place/" + link.getAttribute("data-city"), "_blank");
     };
     function handleCityDisplay(e) {
@@ -18,7 +18,7 @@
         }
         var trs = document.querySelectorAll("tbody>tr");
         var safeThreshold = 0;
-        var _chk = function() {
+        var _chk = function () {
             if (trs.length === len) {
                 trs = document.querySelectorAll("tbody>tr");
                 safeThreshold++;
@@ -28,7 +28,7 @@
             } else {
                 len = trs.length;
                 var cell, attr, arr, inp;
-                [].forEach.call(trs, function(row) {
+                [].forEach.call(trs, function (row) {
                     try {
                         cell = row.querySelector("td");
                         attr = cell.getAttribute("data-reactid");
@@ -52,8 +52,8 @@
     /* CUSTOM console.error to hide quota exceed errors */
     if (window.console) {
         var _cerr = console.error;
-        console.error = function() {
-            if (arguments[0].indexOf("request quota") === -1) {
+        console.error = function () {
+            if (arguments[0].indexOf("request quota") === -1 && arguments[0].indexOf("InvalidKeyMapError") === -1) {
                 _cerr.apply(console, arguments);
             }
         };
@@ -61,10 +61,10 @@
 
     /* Validate empty input and disable the submit button */
     submitBtn.disabled = true;
-    theForm.addEventListener("submit", function(e) {
+    theForm.addEventListener("submit", function (e) {
         submitBtn.disabled = true;
     }, false);
-    searchField.addEventListener("keyup", function(e) {
+    searchField.addEventListener("keyup", function (e) {
         if (searchField.value !== "") {
             submitBtn.disabled = false;
         } else {
